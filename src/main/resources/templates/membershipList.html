@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+
+<form action="/memberships" method="post">
+    Choose your Membership Plan:
+    <h1 >Monthly</h1>
+    <h3 th:text="'Price: ' + ${monthly}"/>
+    <button name="plan" type="submit" value="monthly" th:text="Buy"/>
+    <br/>
+    <h1 >Yearly</h1>
+    <h3 th:text="'Price: ' + ${yearly}"/>
+    <button name="plan" type="submit" value="yearly" Yearly th:text="Buy"/>
+</form>
+
+</body>
+</html>

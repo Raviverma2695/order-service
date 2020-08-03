@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<p th:text="'Product: ' + ${product} " />
+<p th:text="'Variant: ' + ${variant} " />
+<p th:text="'OrderId: ' + ${orderId} " />
+<p th:text="'Amount: ' + ${amount} " />
+<p th:text="'Choose your payment option'" />
+
+
+
+<form action="https://www.example.com/payment/success/" method="POST">
+    <script src="js/config.js"></script>
+    <script th:inline="javascript" src="https://checkout.razorpay.com/v1/checkout.js"
+            data-amount= "100"
+            data-currency="INR"
+            data-buttontext="Pay with Razorpay"
+            data-name="Acme Corp"
+            data-description="Test transaction"
+            data-image="https://example.com/your_logo.jpg"
+            data-prefill.name="Gaurav Kumar"
+            data-prefill.email="gaurav.kumar@example.com"
+            data-prefill.contact="9999999999"
+            data-theme.color="#F37254"
+    ></script>
+    <input type="hidden" custom="Hidden Element" name="hidden">
+</form>
+<!--            data-order_id="order_CgmcjRh9ti2lP7"-->
+<!--data-key="rzp_test_DSfAaZAnXaWp0j"-->
+
+
+</body>
+</html>
